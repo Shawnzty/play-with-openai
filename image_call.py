@@ -1,7 +1,7 @@
 import requests
 import json
 
-API_KEY = ""  # Replace this with your actual API key
+API_KEY = "sk-"  # Replace this with your actual API key
 API_ENDPOINT = "https://api.openai.com/v1/images/generations"
 
 headers = {
