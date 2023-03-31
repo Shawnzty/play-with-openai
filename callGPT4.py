@@ -2,8 +2,8 @@ import openai
 
 def askGPT(text):
     openai.api_key = "sk-"
-    response = openai.Completion.create(
-        engine = "davinci",
+    response = openai.ChatCompletion.create(
+        engine = "gpt-4",
         prompt = text,
         temperature = 0.6,
         max_tokens = 150,
