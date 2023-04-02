@@ -1,19 +1,24 @@
 import openai
 
+openai.api_key = "sk-"
+
 def askGPT(text):
-    openai.api_key = "sk-"
     response = openai.ChatCompletion.create(
-        engine = "gpt-4",
-        prompt = text,
-        temperature = 0.6,
-        max_tokens = 150,
+        model="gpt-3.5-turbo",
+        messages=[],
+        prompt=text,
+        max_tokens=150,
+        n=1,
+        stop=None,
+        temperature=0.7,
     )
-    return response.choices[0].text
+
+    message = response.choices[0].text.strip()
+    return message
 
 def main():
     Q = 'What is the meaning of life?'
-    # print('GPT: Ask me a question\n')
-    # myQn = input()
     print(askGPT(Q))
 
-main()
+if __name__ == '__main__':
+    main()
